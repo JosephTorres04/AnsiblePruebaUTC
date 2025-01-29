@@ -6,7 +6,6 @@
   tasks:
 
   - name: Add Banner
-
     cisco.ios.ios_banner:
       banner: login
       text: |
@@ -15,7 +14,7 @@
       state: present
 
   - name: Merge provided configuration with device configuration
-   cisco.ios.ios_interfaces:
+    cisco.ios.ios_interfaces:
       config:
         - name: GigabitEthernet2
           description: Configured and Merged by Ansible Network
