@@ -1,8 +1,6 @@
-- name: Update APT packages
-  hosts: homelab
+- name: Update and upgrade packages
+  apt:
+    update_cache: yes
+    upgrade: dist
   become: yes
-  tasks:
-    - name: Update and upgrade packages
-      apt:
-        update_cache: yes
-        upgrade: yes
+
