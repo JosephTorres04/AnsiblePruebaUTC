@@ -1,8 +1,14 @@
-- name: Update APT packages
-  hosts: homelab
+- name: Ensure python3-apt is installed
+hosts: homelab
+  apt:
+    name: python3-apt
+    state: present
   become: yes
-  tasks:
-    - name: Update and upgrade packages
-      apt:
-        update_cache: yes
-        upgrade: dist
+
+- name: Update and upgrade packages
+hosts: homelab
+  apt:
+    update_cache: yes
+    upgrade: yes
+    cache_valid_time: 3600
+  become: yes
