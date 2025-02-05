@@ -2,9 +2,11 @@
   hosts: homelab
   become: yes
   tasks:
-    - name: Update and upgrade packages
+    - name: Update the apt cache
       apt:
         update_cache: yes
-        upgrade: yes
-        cache_valid_time: 3600
 
+    - name: Upgrade all packages to the latest version
+      apt:
+        upgrade: dist
+        cache_valid_time: 3600  # Opcional: mantiene el cache válido durante 1 hora
