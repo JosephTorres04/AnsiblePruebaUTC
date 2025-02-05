@@ -2,10 +2,6 @@
   hosts: homelab
   become: yes
   tasks:
-    - name: Ensure python3-apt is installed
-      apt:
-        name: python3-apt
-        state: present
     - name: Update and upgrade packages
       apt:
         update_cache: yes
